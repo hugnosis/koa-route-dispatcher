@@ -1,0 +1,23 @@
+{
+  "name": "koa-route-dispatcher",
+  "description": "Simple route middleware by JSON",
+  "repository": "hugnosis/koa-route-dispatcher",
+  "version": "1.0.0",
+  "keywords": [
+    "koa",
+    "middleware",
+    "routes",
+    "router",
+    "route",
+    "json"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "debug": "*",
+    "koa-rout": "^2.4.2",
+    "koa-compose": "^2.3.0"
+  }
+}
