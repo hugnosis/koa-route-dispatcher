@@ -9,6 +9,8 @@
     "routes",
     "router",
     "route",
+    "dispatch",
+    "dispatcher",
     "json"
   ],
   "files": [
