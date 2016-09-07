@@ -14,3 +14,9 @@ app.use(dispatcher(routeRules, __dirname + '/controller/'));
   {"path": "/pets/:name", "method": "get", "controller": "pets.show"}
 ]
 ```
+
+## Installation
+
+```js
+$ npm install koa-route-dispatcher
+```
