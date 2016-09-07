@@ -1,0 +1,4 @@
+[
+  {"path": "/pets", "method": "get", "controller": "pets.list"},
+  {"path": "/pets/:name", "method": "get", "controller": "pets.show"}
+]
