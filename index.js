@@ -21,6 +21,7 @@ module.exports = function dispatcher(rules, prefix) {
     let method = (rule.method || rule.method == '') ? rule.method.toLowerCase() : 'all';
     let path = rule.path || '';
     let controller = rule.controller || '';
+    let opts = rule.opts;
     let func;
     let module;
 
@@ -54,7 +55,7 @@ module.exports = function dispatcher(rules, prefix) {
       throw TypeError('dispatcher\'s controller requires a generator function (controller: ' + rule.controller + ')');
     }
 
-    middleware.push(route[method](path, module));
+    middleware.push(route[method](path, module, opts));
   });
 
   return compose(middleware);
