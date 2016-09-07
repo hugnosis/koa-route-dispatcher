@@ -4,7 +4,7 @@
 
 ```js
 var routeRules = require('./route-rules.json')
-app.use(dispatcher(routeRules, __dirname + '/controllerPrefixPath/'));
+app.use(dispatcher(routeRules, __dirname + '/controller/'));
 ```
 
  route-rules.json
