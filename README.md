@@ -1,5 +1,7 @@
 # koa-route-dispatcher
 
+[![NPM](https://nodei.co/npm/koa-route-dispatcher.png?downloads=true)](https://nodei.co/npm/koa-route-dispatcher/)
+
  [koa-route](https://github.com/koajs/route): support JSON format
 
 ```js
