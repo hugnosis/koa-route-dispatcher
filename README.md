@@ -1,6 +1,6 @@
 # koa-route-dispatcher
 
- [koa-router](https://github.com/alexmingoia/koa-router): support JSON format
+ [koa-route](https://github.com/koajs/route): support JSON format
 
 ```js
 var routeRules = require('./route_rules.json')
