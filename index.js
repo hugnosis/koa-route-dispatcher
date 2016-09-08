@@ -9,10 +9,10 @@ const route = require('koa-route');
 const compose = require('koa-compose');
 const debug = require('debug')('koa-route-dispatcher');
 
-module.exports = function dispatcher(rules, prefix) {
+module.exports = function dispatcher(rules, controllerPath) {
   var middleware = [];
 
-  prefix = prefix || require.main.filename.replace(/[^\/]*$/, '');
+  controllerPath = controllerPath || require('path').dirname(require.main.filename) + '/controllers/';
   rules = rules || [];
 
   rules.forEach(function (rule) {
@@ -33,7 +33,7 @@ module.exports = function dispatcher(rules, prefix) {
       controller = controller.split('.');
 
       try {
-        module = require(prefix + controller.shift());
+        module = require(controllerPath + controller.shift());
       } catch (err) {
         err.message += ' (module path: ' + __dirname + ' )';
         console.error(err.stack);
