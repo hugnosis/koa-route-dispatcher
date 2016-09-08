@@ -7,7 +7,7 @@
 ```js
 var dispatcher = require('koa-route-dispatcher');
 var routeRules = require('./routes/rules.json'); // require('./routes/rules.js')
-app.use(dispatcher(routeRules, __dirname + '/controllers/'));
+app.use(dispatcher(routeRules));
 ```
 routes/rules.json
 ```json
