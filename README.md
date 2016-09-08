@@ -6,7 +6,7 @@
 
 ```js
 var dispatcher = require('koa-route-dispatcher');
-var routeRules = require('./routes/rules.json'); // require('./routes/rules.js')
+var routeRules = require('./routes/rules.json'); //rules.js
 app.use(dispatcher(routeRules));
 ```
 routes/rules.json
