@@ -5,9 +5,9 @@
 [koa-route](https://github.com/koajs/route): support JSON format
 
 ```js
-var dispatcher = require('koa-route-dispatcher')
-var routeRules = require('./routes/rules.json')
-app.use(dispatcher(routeRules, __dirname + '/controller/'));
+var dispatcher = require('koa-route-dispatcher');
+var routeRules = require('./routes/rules.json'); // require('./routes/rules.js')
+app.use(dispatcher(routeRules, __dirname + '/controllers/'));
 ```
 routes/rules.json
 ```json
