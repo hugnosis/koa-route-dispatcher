@@ -12,7 +12,7 @@ app.use(dispatcher(routeRules));
 routes/rules.json
 ```json
 [
-  {"path": "/pets", "method": "get", "controller": "pets.list", "opts": ""},
+  {"path": "/pets", "method": "get", "controller": "pets.list", "opts": {}},
   {"path": "/pets/:name", "method": "get", "controller": "pets.show"}
 ]
 ```
