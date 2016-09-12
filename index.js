@@ -12,8 +12,8 @@ const debug = require('debug')('koa-route-dispatcher');
 module.exports = function dispatcher(maps, controllerPath) {
   var middleware = [];
 
-  controllerPath = controllerPath || require('path').dirname(require.main.filename) + '/controllers/';
-  maps = maps || [];
+  controllerPath = controllerPath.toString() || require('path').dirname(require.main.filename) + '/controllers/';
+  maps = (maps instanceof Array) ? maps : [];
 
   maps.forEach(function (map) {
     debug('Add route map: %j', map);
