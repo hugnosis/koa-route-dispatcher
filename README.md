@@ -6,10 +6,10 @@
 
 ```js
 var dispatcher = require('koa-route-dispatcher');
-var routeRules = require('./routes/rules.json'); //rules.js
-app.use(dispatcher(routeRules));
+var routesMap = require('./routes/map.json'); //map.js
+app.use(dispatcher(routesMap));
 ```
-routes/rules.json
+routes/map.json
 ```json
 [
   {"path": "/pets", "method": "get", "controller": "pets.list", "opts": {}},
@@ -19,7 +19,7 @@ routes/rules.json
 ## Syntax
 
 ```js
-dispatcher(routeRulesArr[, controllersPath='/workingDirectory/controllers/']);
+dispatcher(routesMap [, controllersPath='/workingDirectory/controllers/']);
 ```
 ## Installation
 

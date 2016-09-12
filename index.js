@@ -9,24 +9,24 @@ const route = require('koa-route');
 const compose = require('koa-compose');
 const debug = require('debug')('koa-route-dispatcher');
 
-module.exports = function dispatcher(rules, controllerPath) {
+module.exports = function dispatcher(maps, controllerPath) {
   var middleware = [];
 
   controllerPath = controllerPath || require('path').dirname(require.main.filename) + '/controllers/';
-  rules = rules || [];
+  maps = maps || [];
 
-  rules.forEach(function (rule) {
-    debug('Add route rule: %j', rule);
+  maps.forEach(function (map) {
+    debug('Add route map: %j', map);
 
-    let method = (rule.method || rule.method == '') ? rule.method.toLowerCase() : 'all';
-    let path = rule.path || '';
-    let controller = rule.controller || '';
-    let opts = rule.opts;
+    let method = (map.method || map.method == '') ? map.method.toLowerCase() : 'all';
+    let path = map.path || '';
+    let controller = map.controller || '';
+    let opts = map.opts;
     let func;
     let module;
 
     if ('' === path || '' === controller) {
-      throw Error('Cannot read \'controller or path\' (rule: ' + JSON.stringify(rule) + ')');
+      throw Error('Cannot read \'controller or path\' (map: ' + JSON.stringify(map) + ')');
     }
 
     if ('string' == typeof controller) {
@@ -44,7 +44,7 @@ module.exports = function dispatcher(rules, controllerPath) {
         if (module[func]) {
           module = module[func];
         } else {
-          throw ReferenceError('function is not defined (controller: ' + rule.controller + ')');
+          throw ReferenceError('function is not defined (controller: ' + map.controller + ')');
         }
       }
     } else {
@@ -52,7 +52,7 @@ module.exports = function dispatcher(rules, controllerPath) {
     }
 
     if ('GeneratorFunction' !== module.constructor.name) {
-      throw TypeError('dispatcher\'s controller requires a generator function (controller: ' + rule.controller + ')');
+      throw TypeError('dispatcher\'s controller requires a generator function (controller: ' + map.controller + ')');
     }
 
     middleware.push(route[method](path, module, opts));
