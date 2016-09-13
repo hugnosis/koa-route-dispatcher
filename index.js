@@ -12,7 +12,7 @@ const debug = require('debug')('koa-route-dispatcher');
 module.exports = function dispatcher(maps, controllerPath) {
   var middleware = [];
 
-  controllerPath = controllerPath.toString() || process.cwd() + '/controllers/';
+  controllerPath = controllerPath || process.cwd() + '/controllers/';
   maps = (maps instanceof Array) ? maps : [];
 
   maps.forEach(function (map) {
