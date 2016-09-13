@@ -17,7 +17,7 @@ routes/map.json
   {"path": "/pets/:name", "method": "get", "controller": "pets.show"}
 ]
 ```
-[path-to-regexp](https://www.npmjs.com/package/path-to-regexp)
+[path-to-regexp](https://www.npmjs.com/package/path-to-regexp){: target="_blank" } in use at koa-route
 - **path** An Express-style string, an array of strings, or a regular expression.
 - **opts**
   - **sensitive** When `true` the route will be case sensitive. (default: `false`)
