@@ -9,6 +9,7 @@ var dispatcher = require('koa-route-dispatcher');
 var routesMap = require('./routes/map.json'); //map.js
 app.use(dispatcher(routesMap));
 ```
+
 routes/map.json
 ```json
 [
@@ -16,13 +17,19 @@ routes/map.json
   {"path": "/pets/:name", "method": "get", "controller": "pets.show"}
 ]
 ```
-## Syntax
+[path-to-regexp](https://www.npmjs.com/package/path-to-regexp)
+- **path** An Express-style string, an array of strings, or a regular expression.
+- **opts**
+  - **sensitive** When `true` the route will be case sensitive. (default: `false`)
+  - **strict** When `false` the trailing slash is optional. (default: `false`)
+  - **end** When `false` the path will match at the beginning. (default: `true`)
 
+## Syntax
 ```js
 dispatcher(routesMap [, controllersPath='/workingDirectory/controllers/']);
 ```
-## Installation
 
+## Installation
 ```js
 $ npm install koa-route-dispatcher
 ```
