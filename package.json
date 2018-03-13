@@ -19,6 +19,7 @@
   "license": "MIT",
   "dependencies": {
     "debug": "*",
+    "co": "^4.6.x",
     "koa-route": "^3.2.x",
     "koa-compose": "^4.0.x"
   }

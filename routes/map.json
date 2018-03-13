@@ -1,4 +1,7 @@
 [
   {"path": "/pets", "method": "get", "controller": "pets.list", "opts": {}},
-  {"path": "/pets/:name", "method": "get", "controller": "pets.show"}
+  {"path": "/pets/:name", "method": "get", "controller": "pets.show"},
+
+  {"path": "/async/pets", "method": "get", "controller": "/async/pets.list", "opts": {}},
+  {"path": "/async/pets/:name", "method": "get", "controller": "/async/pets.show", "opts": {}}
 ]
