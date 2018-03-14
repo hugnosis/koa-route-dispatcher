@@ -2,7 +2,7 @@
   "name": "koa-route-dispatcher",
   "description": "Simple route middleware by JSON",
   "repository": "hugnosis/koa-route-dispatcher",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "keywords": [
     "koa",
     "middleware",

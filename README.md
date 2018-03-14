@@ -77,3 +77,7 @@ module.exports = {
   }
 };
 ```
+
+## License
+MIT
+
